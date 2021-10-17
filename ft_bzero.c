@@ -6,9 +6,11 @@
 /*   By: jglip <jglip@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 21:21:05 by jglip             #+#    #+#             */
-/*   Updated: 2021/10/13 20:04:04 by jglip            ###   ########.fr       */
+/*   Updated: 2021/10/16 10:29:49 by jglip            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

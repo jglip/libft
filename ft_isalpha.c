@@ -6,13 +6,17 @@
 /*   By: jglip <jglip@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 19:49:45 by jglip             #+#    #+#             */
-/*   Updated: 2021/10/13 19:52:45 by jglip            ###   ########.fr       */
+/*   Updated: 2021/10/16 14:52:01 by jglip            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int ch)
+//#include "libft.h"
+
+
+int	ft_isalpha(int c)
 {
-	if ((ch >= 65 && ch <= 90) || (ch >= 97 && ch <= 122))
+	if ((c >= 'a' && c <= 'z') || \
+			(c >= 'A' && c <= 'Z'))
 		return (1);
 	return (0);
 }

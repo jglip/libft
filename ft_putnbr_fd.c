@@ -6,20 +6,26 @@
 /*   By: jglip <jglip@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 19:46:22 by jglip             #+#    #+#             */
-/*   Updated: 2021/10/13 20:33:35 by jglip            ###   ########.fr       */
+/*   Updated: 2021/10/17 09:26:26 by jglip            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 void	ft_putnbr_fd(int n, int fd)
 {
-	char	*s;
-	int		i;
+	unsigned int	nbr;
+	char			c;
 
-	s = ft_itoa(n);
-	i = 0;
-	while (s[i] != '\0')
+	if (n < 0)
 	{
-		write(fd, &s[i], 1);
-		i++;
-	}
+		write(fd, "-", 1);
+		nbr = -n;
+	} 
+	else 
+		nbr = n;
+	if (nbr >= 10)
+		ft_putnbr_fd(nbr / 10, fd);
+	c = ((nbr % 10) + '0');
+	write(fd, &c, 1);
 }

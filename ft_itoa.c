@@ -6,11 +6,11 @@
 /*   By: jglip <jglip@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 17:48:32 by jglip             #+#    #+#             */
-/*   Updated: 2021/10/13 20:14:17 by jglip            ###   ########.fr       */
+/*   Updated: 2021/10/16 10:43:15 by jglip            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 static int	nmb_len(long long int n)
 {

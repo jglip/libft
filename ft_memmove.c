@@ -6,11 +6,13 @@
 /*   By: jglip <jglip@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/09 15:34:22 by jglip             #+#    #+#             */
-/*   Updated: 2021/10/13 20:26:20 by jglip            ###   ########.fr       */
+/*   Updated: 2021/10/16 10:44:14 by jglip            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*memmove(void *dst, const void *src, size_t len)
+#include "libft.h"
+
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	size_t	i;
 

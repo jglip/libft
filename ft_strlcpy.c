@@ -6,26 +6,30 @@
 /*   By: jglip <jglip@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 19:31:26 by jglip             #+#    #+#             */
-/*   Updated: 2021/10/13 21:10:04 by jglip            ###   ########.fr       */
+/*   Updated: 2021/10/17 17:17:59 by jglip            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t	ft_strlcpy(char *restrict dst,
-		const char *restrict src, size_t dstsize)
+#include "libft.h"
+
+size_t	ft_strlcpy(char *dst,
+		const char *src, size_t dstsize)
 {
-	int	i;
+	size_t	i;
+	char *str1;
 
 	i = 0;
+	str1 = (char *)src;
+	if (!src)
+		return (0);
 	if (dstsize > 0)
 	{
-		while (src[i] != '\0')
+		while (str1[i] != '\0' && i < dstsize - 1)
 		{
-			if (i <= dstsize - 2)
-				dst[i] = src[i];
-			else if (i == dstsize - 1)
-				dst[i] = '\0';
+			dst[i] = str1[i];
 			i++;
 		}
-	}
-	return (i);
+		dst[i] = '\0';
+	} 
+	return (ft_strlen(str1));
 }

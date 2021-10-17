@@ -6,35 +6,35 @@
 /*   By: jglip <jglip@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 20:38:41 by jglip             #+#    #+#             */
-/*   Updated: 2021/10/13 21:22:33 by jglip            ###   ########.fr       */
+/*   Updated: 2021/10/17 16:22:48 by jglip            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strnstr(const char *haystack,
-		const char *needle, size_t len)
-{
-	int		i;
-	int		j;
-	char	*res;
+#include "libft.h"
 
+char	*ft_strnstr(const char *hstk, const char *ndl, size_t len)
+{
+	size_t	i;
+	size_t	j;
+
+	if (ndl == NULL || ft_strlen(ndl) == 0)
+		return ((char *)hstk);
 	i = 0;
-	res = haystack[0];
-	while (haystack[i] != 0)
+	while (hstk[i] != '\0' && i < len)
 	{
-		if (haystack[i] == needle[0])
+		if (hstk[i] == ndl[0])
 		{
-			res = haystack[i];
-			j = 1;
-			while (j <= len - 2)
+			j = 0;
+			while (i + j < len)
 			{
-				if (haystack[i + j] != needle[j])
+				if (hstk[i + j] != ndl[j])
 					break;
-				if (j == len - 2)
-					return (res);
+				if (ndl[j + 1] == '\0')
+					return ((char *)hstk + i);
 				j++;
 			}
 		}
 		i++;
 	}
-	return (res);
+	return (0);
 }

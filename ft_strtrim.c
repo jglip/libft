@@ -6,24 +6,13 @@
 /*   By: jglip <jglip@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 14:38:19 by jglip             #+#    #+#             */
-/*   Updated: 2021/10/13 21:38:28 by jglip            ###   ########.fr       */
+/*   Updated: 2021/10/16 13:14:50 by jglip            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
-static int	ft_strlen(const char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
-}
-
-static void	find_begin(char const *s1, char const *set, unsigned int *ind)
+static void	find_begin(char const *s1, char const *set, int *ind)
 {
 	unsigned int	i;
 	unsigned int	j;
@@ -48,12 +37,12 @@ static void	find_begin(char const *s1, char const *set, unsigned int *ind)
 	}
 }
 
-static void	find_end(char const *s1, char const *set, unsigned int *ind)
+static void	find_end(char const *s1, char const *set, int *ind)
 {
 	unsigned int	i;
 	unsigned int	j;
 
-	i = ft_strlen(s1) - 1;
+	i = ft_strlen((char *)s1) - 1;
 	ind[1] = -1;
 	while (s1[i] >= 0 && ind[1] == -1)
 	{
@@ -65,7 +54,6 @@ static void	find_end(char const *s1, char const *set, unsigned int *ind)
 			else if (s1[i] != set[j] && set[j + 1] == '\0')
 			{
 				ind[1] = i;
-				break ;
 			}
 			j++;
 		}
@@ -75,10 +63,10 @@ static void	find_end(char const *s1, char const *set, unsigned int *ind)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	unsigned int	i;
-	unsigned int	j;
-	char			*new;
-	unsigned int	ind[2];
+	int		i;
+	int		j;
+	char	*new;
+	int		ind[2];
 
 	find_begin(s1, set, ind);
 	find_end(s1, set, ind);

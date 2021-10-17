@@ -6,9 +6,11 @@
 /*   By: jglip <jglip@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 19:42:28 by jglip             #+#    #+#             */
-/*   Updated: 2021/10/13 20:31:21 by jglip            ###   ########.fr       */
+/*   Updated: 2021/10/16 10:45:20 by jglip            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_putendl_fd(char *s, int fd)
 {

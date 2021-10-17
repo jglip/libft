@@ -6,18 +6,22 @@
 /*   By: jglip <jglip@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/09 13:03:51 by jglip             #+#    #+#             */
-/*   Updated: 2021/10/13 20:19:00 by jglip            ###   ########.fr       */
+/*   Updated: 2021/10/16 18:04:10 by jglip            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*memchr(const void *s, int c, size_t n)
+#include "libft.h"
+
+void	*ft_memchr(const void *s, int c, size_t n)
 {
 	size_t	i;
 
 	i = 0;
+	if (c > 256)
+		c = c % 256;
 	while (i < n)
 	{
-		if (((unsigned char *)s)[i] == (unsigned char *)c)
+		if (((char *)s)[i] == c)
 			return ((void *)(s + i));
 		i++;
 	}

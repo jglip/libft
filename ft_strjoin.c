@@ -6,19 +6,21 @@
 /*   By: jglip <jglip@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 13:49:52 by jglip             #+#    #+#             */
-/*   Updated: 2021/10/13 20:56:29 by jglip            ###   ########.fr       */
+/*   Updated: 2021/10/16 11:42:31 by jglip            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-static int	ft_strlen(const char *s)
-{
-	int	i;
+#include "libft.h"
 
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
-}
+// static int	ft_strlen(const char *s)
+// {
+// 	int	i;
+
+// 	i = 0;
+// 	while (s[i] != '\0')
+// 		i++;
+// 	return (i);
+// }
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
