@@ -6,7 +6,7 @@
 /*   By: jglip <jglip@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 13:18:42 by jglip             #+#    #+#             */
-/*   Updated: 2021/10/17 12:44:59 by jglip            ###   ########.fr       */
+/*   Updated: 2021/10/18 20:47:53 by jglip            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,17 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 	size_t	l;
 	char	*new;
+
 	if (s == NULL)
 		return (NULL);
-	if ((unsigned int)ft_strlen(s) < start)
+	if (start > (unsigned int)ft_strlen(s))
 		return (ft_strdup(""));
 	l = ft_strlen(s) - start;
 	if (l < len)
 		len = l;
 	new = (char *)malloc(sizeof(char) * (len + 1));
 	if (new == NULL)
-	return (NULL);
+		return (NULL);
 	i = 0;
 	while (i < len)
 	{
@@ -36,4 +37,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	new[i] = '\0';
 	return (new);
 }
- 

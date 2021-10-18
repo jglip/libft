@@ -6,7 +6,7 @@
 /*   By: jglip <jglip@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 19:46:22 by jglip             #+#    #+#             */
-/*   Updated: 2021/10/17 09:26:26 by jglip            ###   ########.fr       */
+/*   Updated: 2021/10/18 20:38:11 by jglip            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ void	ft_putnbr_fd(int n, int fd)
 	{
 		write(fd, "-", 1);
 		nbr = -n;
-	} 
-	else 
+	}
+	else
 		nbr = n;
 	if (nbr >= 10)
 		ft_putnbr_fd(nbr / 10, fd);

@@ -6,7 +6,7 @@
 /*   By: jglip <jglip@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 20:38:41 by jglip             #+#    #+#             */
-/*   Updated: 2021/10/17 16:22:48 by jglip            ###   ########.fr       */
+/*   Updated: 2021/10/18 20:17:57 by jglip            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_strnstr(const char *hstk, const char *ndl, size_t len)
 			while (i + j < len)
 			{
 				if (hstk[i + j] != ndl[j])
-					break;
+					break ;
 				if (ndl[j + 1] == '\0')
 					return ((char *)hstk + i);
 				j++;
